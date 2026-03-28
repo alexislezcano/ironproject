@@ -27,7 +27,8 @@
       "Bash(/tmp/colors_check.txt:*)",
       "Read(//tmp/**)",
       "WebFetch(domain:fonts.google.com)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(npm view:*)"
     ]
   }
 }

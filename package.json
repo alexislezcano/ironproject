@@ -9,14 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@sanity/client": "^6.0.0",
-    "@sanity/image-url": "^1.0.0",
+    "@sanity/client": "^7.13.2",
+    "@sanity/image-url": "^2.1.0",
     "@sanity/vision": "^5.18.0",
     "next": "^15.0.0",
-    "next-sanity": "^9.0.0",
+    "next-sanity": "^11.6.12",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sanity": "^3.0.0"
+    "sanity": "^4.22.0",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
