@@ -1,5 +1,39 @@
 @import "tailwindcss";
 
+/* ── Stack Sans Notch — local font (files in /public/fonts/stack-sans-notch/) ── */
+
+@font-face {
+  font-family: 'Stack Sans Notch';
+  src: url('/fonts/stack-sans-notch/StackSansNotch-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Stack Sans Notch';
+  src: url('/fonts/stack-sans-notch/StackSansNotch-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Stack Sans Notch';
+  src: url('/fonts/stack-sans-notch/StackSansNotch-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Stack Sans Notch';
+  src: url('/fonts/stack-sans-notch/StackSansNotch-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ═══════════════════════════════════════════════════════
    IRON PROJECT — Design System v3 Editorial
    Dark  : bg #000000  · text #D2C6B6  · CTA blanco/negro
@@ -86,7 +120,7 @@
   --color-ip-wa-hover:     var(--ip-wa-hover);
   --color-ip-wa-text:      var(--ip-wa-text);
 
-  --font-heading: var(--font-stack), 'Stack Sans Notch', system-ui, sans-serif;
+  --font-heading: 'Stack Sans Notch', var(--font-inter), system-ui, sans-serif;
   --font-sans:    var(--font-inter), 'Inter', system-ui, sans-serif;
 
   --radius-sm: 2px;
