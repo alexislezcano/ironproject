@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)",
+      "Bash(grep:*)",
+      "Bash(mkdir:*)",
+      "Bash(npx kill-port:*)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(cp \"/c/Users/Alexis/Downloads/ejemplo1.jpg\" /c/Users/Alexis/allapps/ironproject/public/images/producto-1.jpg)",
+      "Bash(cp \"/c/Users/Alexis/Downloads/ejemplo.jpg\" /c/Users/Alexis/allapps/ironproject/public/images/producto-2.jpg)",
+      "Bash(cd:*)",
+      "Bash(for dir:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/Alexis/allapps/ironproject/**)",
+      "Bash(done)",
+      "Bash(cat app/catalogo/[categoria]/page.tsx)",
+      "Bash(ls app/proyectos/[slug]/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3003)",
+      "Bash(node -e \":*)",
+      "Bash(tasklist)",
+      "Bash(wmic process:*)",
+      "Bash(taskkill:*)",
+      "Bash(find /c/Users/Alexis/allapps/ironproject/app /c/Users/Alexis/allapps/ironproject/components -type f \\\\\\(-name *.tsx -o -name *.css \\\\\\))",
+      "Bash(/tmp/colors_check.txt:*)",
+      "Read(//tmp/**)",
+      "WebFetch(domain:fonts.google.com)",
+      "WebSearch"
+    ]
+  }
+}

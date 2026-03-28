@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════
+   IRON PROJECT — Design System v3 Editorial
+   Dark  : bg #000000  · text #D2C6B6  · CTA blanco/negro
+   Light : bg #f6f6f6  · text #262626  · CTA negro/blanco
+   WA    : bg #00772c  · text #f6f6f6  (ambos modos)
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Light Mode Tokens (default) ───────────────────────── */
+:root {
+  --ip-bg:             #f6f6f6;
+  --ip-surface:        #f0f0f0;  /* barely-there lift */
+  --ip-surface-2:      #e8e8e8;
+  --ip-border:         #e2e2e2;  /* ultra-light border */
+  --ip-border-hover:   #c8c8c8;
+  --ip-text:           #262626;
+  --ip-text-sec:       #525252;
+  --ip-text-muted:     #a3a3a3;
+  --ip-accent:         #262626;  /* monochrome accent in light */
+  --ip-accent-hover:   #404040;
+
+  /* CTA primarios — negro sobre blanco en light */
+  --ip-cta-bg:         #262626;
+  --ip-cta-text:       #f6f6f6;
+  --ip-cta-bg-hover:   #404040;
+
+  /* WhatsApp — igual en ambos modos */
+  --ip-wa:             #00772c;
+  --ip-wa-hover:       #005f23;
+  --ip-wa-text:        #f6f6f6;
+
+  --ip-shadow-sm:  0 1px 3px  rgba(0, 0, 0, 0.05);
+  --ip-shadow-md:  0 4px 12px rgba(0, 0, 0, 0.07);
+  --ip-shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.10);
+
+  --ip-ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --ip-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ip-dur-fast:   150ms;
+  --ip-dur-base:   220ms;
+  --ip-dur-slow:   400ms;
+}
+
+/* ── Dark Mode Tokens ───────────────────────────────────── */
+.dark {
+  --ip-bg:             #000000;
+  --ip-surface:        #0D0C0B;
+  --ip-surface-2:      #1A1815;
+  --ip-border:         #2A2520;
+  --ip-border-hover:   #3D3630;
+  --ip-text:           #D2C6B6;
+  --ip-text-sec:       #B8ADA0;
+  --ip-text-muted:     #6E6358;
+  --ip-accent:         #D2C6B6;  /* monochrome — mismo que text principal */
+  --ip-accent-hover:   #B8ADA0;
+
+  --ip-cta-bg:         #f6f6f6;
+  --ip-cta-text:       #000000;
+  --ip-cta-bg-hover:   #e2e2e2;
+
+  --ip-wa:             #00772c;
+  --ip-wa-hover:       #005f23;
+  --ip-wa-text:        #f6f6f6;
+
+  --ip-shadow-sm:  0 1px 4px  rgba(0, 0, 0, 0.55);
+  --ip-shadow-md:  0 4px 16px rgba(0, 0, 0, 0.70);
+  --ip-shadow-lg:  0 8px 32px rgba(0, 0, 0, 0.85);
+}
+
+/* ── Tailwind Theme Registration ────────────────────────── */
+@theme inline {
+  --color-ip-bg:           var(--ip-bg);
+  --color-ip-surface:      var(--ip-surface);
+  --color-ip-surface-2:    var(--ip-surface-2);
+  --color-ip-border:       var(--ip-border);
+  --color-ip-border-hover: var(--ip-border-hover);
+  --color-ip-text:         var(--ip-text);
+  --color-ip-text-sec:     var(--ip-text-sec);
+  --color-ip-text-muted:   var(--ip-text-muted);
+  --color-ip-accent:       var(--ip-accent);
+  --color-ip-accent-hover: var(--ip-accent-hover);
+  --color-ip-cta-bg:       var(--ip-cta-bg);
+  --color-ip-cta-text:     var(--ip-cta-text);
+  --color-ip-cta-bg-hover: var(--ip-cta-bg-hover);
+  --color-ip-wa:           var(--ip-wa);
+  --color-ip-wa-hover:     var(--ip-wa-hover);
+  --color-ip-wa-text:      var(--ip-wa-text);
+
+  --font-heading: var(--font-stack), 'Stack Sans Notch', system-ui, sans-serif;
+  --font-sans:    var(--font-inter), 'Inter', system-ui, sans-serif;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+}
+
+/* ── Base ───────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--ip-bg);
+  color:            var(--ip-text);
+  font-family:      var(--font-sans, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color var(--ip-dur-slow) var(--ip-ease),
+    color            var(--ip-dur-slow) var(--ip-ease);
+}
+
+.no-transition *,
+.no-transition *::before,
+.no-transition *::after {
+  transition-duration: 0ms !important;
+  animation-duration:  0ms !important;
+}
+
+::selection {
+  background-color: var(--ip-text);
+  color:            var(--ip-bg);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+
+::-webkit-scrollbar              { width: 4px; }
+::-webkit-scrollbar-track        { background: var(--ip-bg); }
+::-webkit-scrollbar-thumb        { background: var(--ip-border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover  { background: var(--ip-text-muted); }
+
+/* ── Focus ──────────────────────────────────────────────── */
+
+:focus-visible {
+  outline:        2px solid var(--ip-text);
+  outline-offset: 3px;
+  border-radius:  2px;
+}
+
+/* ── Logo switching (theme × breakpoint) ────────────────── */
+
+/* Mobile-first: show light-mobile, hide everything else */
+.logo-light-desktop { display: none;  }
+.logo-light-mobile  { display: block; }
+.logo-dark-desktop  { display: none;  }
+.logo-dark-mobile   { display: none;  }
+
+/* Dark mode on mobile */
+.dark .logo-light-mobile  { display: none;  }
+.dark .logo-dark-mobile   { display: block; }
+
+/* Desktop (≥ 768px) */
+@media (min-width: 768px) {
+  .logo-light-desktop { display: block; }
+  .logo-light-mobile  { display: none;  }
+  .logo-dark-desktop  { display: none;  }
+  .logo-dark-mobile   { display: none;  }
+
+  /* Dark mode on desktop */
+  .dark .logo-light-desktop { display: none;  }
+  .dark .logo-dark-desktop  { display: block; }
+}
+
+/* ── Nav link hover ──────────────────────────────────────── */
+
+.nav-link {
+  color:      var(--ip-text-muted);
+  transition: color var(--ip-dur-fast) var(--ip-ease);
+}
+.nav-link:hover { color: var(--ip-text); }
+
+/* ── Typography ─────────────────────────────────────────── */
+
+.font-heading {
+  font-family:    var(--font-heading);
+  letter-spacing: -0.025em;
+  line-height:    1.05;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+.font-heading-hero {
+  font-family:    var(--font-heading);
+  letter-spacing: -0.04em;
+  line-height:    0.92;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+.font-heading-sm {
+  font-family:    var(--font-heading);
+  letter-spacing: -0.015em;
+  line-height:    1.20;
+  font-feature-settings: "kern" 1;
+}
+
+/* ── Editorial section divider ──────────────────────────── */
+
+.section-rule {
+  border: none;
+  border-top: 1px solid var(--ip-border);
+}
+
+/* ── Scroll Reveal ──────────────────────────────────────── */
+
+.reveal {
+  opacity:   0;
+  transform: translateY(16px);
+  transition:
+    opacity   var(--ip-dur-slow) var(--ip-ease),
+    transform var(--ip-dur-slow) var(--ip-ease);
+}
+.reveal.is-visible {
+  opacity:   1;
+  transform: translateY(0);
+}
+
+/* ── Keyframes ──────────────────────────────────────────── */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96) translateY(-4px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(0, 119, 44, 0.4); }
+  60%       { box-shadow: 0 0 0 10px rgba(0, 119, 44, 0);  }
+}
+
+@keyframes themeSpin {
+  from { transform: rotate(-90deg) scale(0.6); opacity: 0; }
+  to   { transform: rotate(0deg)   scale(1);   opacity: 1; }
+}
+
+/* ── Animation Utilities ────────────────────────────────── */
+
+.animate-fade-up    { animation: fadeUp    500ms var(--ip-ease) both; }
+.animate-fade-in    { animation: fadeIn    300ms var(--ip-ease) both; }
+.animate-scale-in   { animation: scaleIn   200ms var(--ip-spring) both; }
+.animate-slide-down { animation: slideDown 180ms var(--ip-ease) both; }
+.wa-pulse           { animation: waPulse   2.5s  ease-in-out infinite; }
+
+.delay-75  { animation-delay:  75ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* ── Card hover — ultra minimal ─────────────────────────── */
+
+.card-hover {
+  transition: border-color var(--ip-dur-base) var(--ip-ease);
+}
+.card-hover:hover {
+  border-color: var(--ip-border-hover);
+}
+
+/* ── Button micro-interactions ──────────────────────────── */
+
+.btn-press {
+  transition: opacity var(--ip-dur-fast) var(--ip-ease);
+}
+.btn-press:hover  { opacity: 0.85; }
+.btn-press:active { opacity: 0.7;  }
+
+/* ── Image zoom on hover container ─────────────────────── */
+
+.img-zoom img {
+  transition: transform var(--ip-dur-slow) var(--ip-ease);
+}
+.img-zoom:hover img {
+  transform: scale(1.04);
+}
