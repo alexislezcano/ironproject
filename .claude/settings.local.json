@@ -28,7 +28,10 @@
       "Read(//tmp/**)",
       "WebFetch(domain:fonts.google.com)",
       "WebSearch",
-      "Bash(npm view:*)"
+      "Bash(npm view:*)",
+      "Bash(node -e \"const p = require\\(''./node_modules/next/package.json''\\); console.log\\(p.version\\)\")",
+      "Bash(node -e \"const data = require\\(''''./node_modules/next/dist/server/font-utils.js''''\\); console.log\\(Object.keys\\(data\\).filter\\(k => k.toLowerCase\\(\\).includes\\(''''stack''''\\)\\)\\)\")",
+      "Bash(node:*)"
     ]
   }
 }

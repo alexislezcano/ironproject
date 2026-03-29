@@ -1,38 +1,5 @@
 @import "tailwindcss";
-
-/* ── Stack Sans Notch — local font (files in /public/fonts/stack-sans-notch/) ── */
-
-@font-face {
-  font-family: 'Stack Sans Notch';
-  src: url('/fonts/stack-sans-notch/StackSansNotch-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Stack Sans Notch';
-  src: url('/fonts/stack-sans-notch/StackSansNotch-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Stack Sans Notch';
-  src: url('/fonts/stack-sans-notch/StackSansNotch-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Stack Sans Notch';
-  src: url('/fonts/stack-sans-notch/StackSansNotch-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400;500;600;700&display=swap');
 
 /* ═══════════════════════════════════════════════════════
    IRON PROJECT — Design System v3 Editorial
@@ -120,7 +87,7 @@
   --color-ip-wa-hover:     var(--ip-wa-hover);
   --color-ip-wa-text:      var(--ip-wa-text);
 
-  --font-heading: 'Stack Sans Notch', var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-stack), system-ui, sans-serif;
   --font-sans:    var(--font-inter), 'Inter', system-ui, sans-serif;
 
   --radius-sm: 2px;
@@ -195,9 +162,11 @@ body {
   .logo-dark-desktop  { display: none;  }
   .logo-dark-mobile   { display: none;  }
 
-  /* Dark mode on desktop */
+  /* Dark mode on desktop — specificity must beat .dark .logo-dark-mobile outside this block */
   .dark .logo-light-desktop { display: none;  }
   .dark .logo-dark-desktop  { display: block; }
+  .dark .logo-dark-mobile   { display: none;  }
+  .dark .logo-light-mobile  { display: none;  }
 }
 
 /* ── Nav link hover ──────────────────────────────────────── */

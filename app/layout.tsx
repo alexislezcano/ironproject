@@ -35,7 +35,7 @@ const localBusinessSchema = {
   description: 'Fabricación artesanal de muebles y estructuras de hierro.',
   '@id': 'https://ironproject.com',
   url: 'https://ironproject.com',
-  telephone: '+5491100000000',
+  telephone: '+5991157477788',
   priceRange: '$$',
   address: { '@type': 'PostalAddress', addressCountry: 'AR' },
   sameAs: ['https://www.instagram.com/ironproject'],
