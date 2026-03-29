@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WA_NUMBER ?? '5991157477788'
+const WHATSAPP_NUMBER =process.env.NEXT_PUBLIC_WA_NUMBER ?? '5491157477788'
 
 export type WhatsAppMessageType = 'product' | 'custom' | 'wholesale' | 'general' | 'rescue'
 
